@@ -1,0 +1,56 @@
+/* ============================================
+   footer.css — Site footer
+============================================ */
+
+footer {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-left {
+  color: var(--dim);
+  font-size: 0.85rem;
+}
+
+.footer-left span {
+  color: var(--muted);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-socials a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.footer-socials a:hover {
+  color: var(--accent2);
+  border-color: var(--accent2);
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+}
