@@ -20,37 +20,16 @@ document.querySelectorAll('.reveal').forEach((el) => {
 
 
 /* --- Contact form --- */
-const sendBtn = document.getElementById('sendBtn');
-
-if (sendBtn) {
-  sendBtn.addEventListener('click', () => {
-    const inputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
-    let valid = true;
-
-    inputs.forEach((input) => {
-      if (!input.value.trim()) {
-        input.style.borderColor = '#f472b6';
-        valid = false;
-      } else {
-        input.style.borderColor = '';
-      }
-    });
-
-    if (!valid) return;
-
-    sendBtn.textContent = 'Message Sent ✓';
-    sendBtn.style.background = '#34d399';
-    sendBtn.disabled = true;
-
-    setTimeout(() => {
-      sendBtn.textContent = 'Send Message ↗';
-      sendBtn.style.background = '';
-      sendBtn.disabled = false;
-      inputs.forEach((input) => (input.value = ''));
-    }, 3000);
+/* --- Form submission loading state --- */
+const form = document.querySelector('form[name="contact"]');
+if (form) {
+  form.addEventListener('submit', () => {
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
   });
 }
-
 
 /* --- Navbar hide/show on scroll --- */
 let lastScrollY = window.scrollY;

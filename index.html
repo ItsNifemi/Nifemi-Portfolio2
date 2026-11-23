@@ -30,10 +30,12 @@
   </nav>
 
   <!-- HERO -->
-  <section id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
-    <div class="hero-content">
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+
+    <div class="hero-text">
       <div class="hero-badge">
         <span class="dot"></span>
         Available for opportunities
@@ -58,13 +60,21 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </a>
       </div>
-      <div class="scroll-hint">
-        SCROLL DOWN
-        <span class="scroll-arrow">↓</span>
+    </div>
+
+    <div class="hero-photo">
+      <div class="photo-frame">
+        <img src="images/profile.jpg" alt="Nifemi Agbelese" />
       </div>
     </div>
-  </section>
 
+    <div class="scroll-hint">
+      SCROLL DOWN
+      <span class="scroll-arrow">↓</span>
+    </div>
+
+  </div>
+</section>
   <!-- ABOUT -->
   <section id="about">
     <div class="container">
@@ -125,10 +135,9 @@
       <p class="section-desc reveal">Realnworld applications I've built, showcasing my skills across the full stack.</p>
       <div class="projects-grid">
         <div class="project-card reveal reveal-delay-1">
-          <div class="project-thumb">
-            <div class="project-thumb-bg"></div>
-            <span class="project-emoji">🗳️</span>
-          </div>
+<div class="project-thumb project-thumb--image">
+  <img src="images/au-voting.png" alt="AUSA Voting System welcome screen" />
+</div>
           <div class="project-body">
             <span class="project-status live">Live</span>
             <div class="project-name">AU Voting System</div>
@@ -257,27 +266,38 @@
             </div>
           </div>
         </div>
-        <div class="contact-form reveal reveal-delay-1">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Name</label>
-              <input type="text" placeholder="Your name" />
-            </div>
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" placeholder="your@email.com" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Subject</label>
-            <input type="text" placeholder="What's this about?" />
-          </div>
-          <div class="form-group">
-            <label>Message</label>
-            <textarea placeholder="Tell me about your project..."></textarea>
-          </div>
-          <button class="btn-send" id="sendBtn">Send Message ↗</button>
-        </div>
+<form
+  class="contact-form reveal reveal-delay-1"
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+>
+  <input type="hidden" name="form-name" value="contact" />
+  <p style="display:none">
+    <label>Don't fill this out: <input name="bot-field" /></label>
+  </p>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" name="name" placeholder="Your name" required />
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" name="email" placeholder="your@email.com" required />
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Subject</label>
+    <input type="text" name="subject" placeholder="What's this about?" required />
+  </div>
+  <div class="form-group">
+    <label>Message</label>
+    <textarea name="message" placeholder="Tell me about your project..." required></textarea>
+  </div>
+  <button type="submit" class="btn-send">Send Message ↗</button>
+</form>
       </div>
     </div>
   </section>
